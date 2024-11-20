@@ -1,0 +1,50 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.alarm_manager" // Update with your desired package name.
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        // Specify your unique Application ID.
+        applicationId = "com.example.alarm_manager"
+        // Minimum SDK version set for Alarm Manager compatibility.
+        minSdk = 19
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            // Minify and optimize the release build.
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Add your signing configuration for release builds.
+            signingConfig signingConfigs.debug // Change to `signingConfigs.release` if using a release keystore.
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+// Add this block if your project uses plugins requiring Java 8 features.
+dependencies {
+    implementation "androidx.work:work-runtime-ktx:2.8.1" // For compatibility with Alarm Manager and related features.
+}

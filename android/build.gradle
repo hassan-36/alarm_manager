@@ -1,0 +1,29 @@
+// Top-level build.gradle file for Android configuration in a Flutter project.
+// You can add configurations that are common to all sub-projects/modules here.
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        // Include additional repositories if needed.
+        maven { url 'https://jitpack.io' } // Optional: JitPack for third-party dependencies.
+    }
+}
+
+rootProject.buildDir = "../build"
+
+// Organize build directories to avoid clutter.
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+// Task to clean the build directories for all projects.
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+
+// Optional: Add any global properties or configurations here if needed for all modules.

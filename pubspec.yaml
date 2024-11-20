@@ -1,0 +1,51 @@
+name: alarm_manager
+description: "A new Flutter application."
+
+# Prevent accidental publishing to pub.dev
+publish_to: 'none' # Remove this line if you want to publish to pub.dev
+
+# Define version and build number
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Cupertino Icons font for iOS style icons
+  cupertino_icons: ^1.0.8
+  flutter_local_notifications: ^12.0.0
+  android_alarm_manager_plus: ^2.0.0
+  assets_audio_player: ^3.0.3
+  html: ^0.15.5
+  intl: ^0.18.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Linting package for good coding practices
+  flutter_lints: ^4.0.0
+
+flutter:
+  # Include Material Design icons
+  uses-material-design: true
+
+  # Assets (e.g., alarm ringtone)
+  assets:
+    - assets/alarm_ringtone.mp3
+
+  # Add custom fonts if needed
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
